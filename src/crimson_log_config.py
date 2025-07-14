@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from crimson_logger.src.write_mode import WriteMode
 from crimson_logger.src.thread_model import ThreadModel
 
+
 @dataclass
 class CrimsonLogConfig:
     ts_format: str
@@ -16,9 +17,9 @@ class CrimsonLogConfig:
 
     @staticmethod
     def from_dict(cfg: dict[str, str]):
-        '''
+        """
         Create CrimsonLogConfig object from config dict
-        '''
+        """
 
         return CrimsonLogConfig(
             ts_format=cfg["ts_format"],
@@ -30,4 +31,3 @@ class CrimsonLogConfig:
             db_ip_address=cfg.get("db_ip_address"),
             db_port=cfg.get("db_port", ""),
         )
-    

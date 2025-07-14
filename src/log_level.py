@@ -2,6 +2,7 @@ from enum import Enum
 
 _ORDINAL_MAP = {"DEBUG": 10, "INFO": 20, "WARN": 30, "ERROR": 40, "FATAL": 50}
 
+
 class LogLevel(str, Enum):
     INFO = "INFO"
     DEBUG = "DEBUG"

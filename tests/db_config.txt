@@ -1,0 +1,6 @@
+ts_format:dd:mm:yyyy hh:MM:ss 
+log_level:ERROR sink_type:DB 
+dbhost:<ip_address> 
+dbport:<db_port> 
+thread_model:MULTI 
+write_mode:ASYNC 

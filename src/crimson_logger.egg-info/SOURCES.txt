@@ -1,0 +1,11 @@
+LICENSE
+README.md
+pyproject.toml
+src/crimson_logger.egg-info/PKG-INFO
+src/crimson_logger.egg-info/SOURCES.txt
+src/crimson_logger.egg-info/dependency_links.txt
+src/crimson_logger.egg-info/requires.txt
+src/crimson_logger.egg-info/top_level.txt
+tests/test_classes.py
+tests/test_formatter.py
+tests/test_parser.py

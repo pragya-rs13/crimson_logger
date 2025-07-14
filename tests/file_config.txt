@@ -1,0 +1,5 @@
+ts_format:dd-mm-yyyy hh:MM:ss 
+log_level:INFO sink_type:FILE 
+file_location:tmp/info.log
+thread_model:SINGLE 
+write_mode:SYNC

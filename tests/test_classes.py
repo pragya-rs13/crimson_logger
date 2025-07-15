@@ -107,3 +107,5 @@ def test_05_if_logger_works(config_obj):
     with open(config_obj.file_location, "r") as log_file:
         for line in log_file:
             assert log_text == line
+    
+    logger.close()

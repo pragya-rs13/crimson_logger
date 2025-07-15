@@ -3,12 +3,12 @@
 **CrimsonLogger** is a lightweight, extensible, and configurable logging library built in Python without using the built-in `logging` module. 
 It supports writing logs to sinks (e.g., file), with configurable timestamp formats, log levels, thread models (SINGLE or MULTI), and write modes (SYNC or ASYNC).
 
-> 🔐 **Note:** This project is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
+> **Note:** This project is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/).  
 > Commercial use, redistribution, or derivative works are **strictly prohibited**.
 
 ---
 
-## 🔧 Features
+## Features
 
 - Simple `.txt` config file for logger setup
 - Log rotation and `.gz` compression (file sink)
@@ -19,23 +19,16 @@ It supports writing logs to sinks (e.g., file), with configurable timestamp form
 - Extensible with your own sinks
 ---
 
-## 📦 Installation
+## Installation
 
 ```bash
 git clone https://github.com/pragya-rs13/crimson_logger.git
 cd crimson_logger
-
-## Sample Config File
-```
-ts_format:dd-mm-yyyy hh:MM:ss 
-log_level:INFO sink_type:FILE 
-file_location:tmp/info.log
-thread_model:SINGLE 
-write_mode:SYNC
 ```
 
-📄 Configuration File Format
+## Configuration File Format
 
+```
 Sample file_config.txt:
 
 ts_format:dd-mm-yyyy hh:MM:ss
@@ -44,10 +37,11 @@ sink_type:FILE
 file_location:/tmp/crimson.log
 thread_model:SINGLE
 write_mode:SYNC
+```
 
-🚀 Usage
-1. Build the Logger using Builder Pattern
-
+## Usage
+1. Build the Logger
+```
 from crimson_logger.src.crimson_logger import CrimsonLoggerBuilder
 
 logger = (
@@ -58,19 +52,26 @@ logger = (
     .set_formatter()
     .build()
 )
+```
 
 2. Log Messages
 
+```
 logger.info("App started", "main")
 logger.warn("Something unusual", "auth")
 logger.error("Unhandled exception", "worker")
+```
 
-🧪 Testing
+## Testing
 Run tests using pytest:
 
+```
 pytest crimson_logger/tests/
+```
 
 Example test case (uses real file sink):
+
+```
 
 def test_logger_logs_correctly(config_obj):
     logger = (
@@ -83,23 +84,29 @@ def test_logger_logs_correctly(config_obj):
     )
     logger.warn("Sample warning", "test")
     logger.close()
+```
 
-🔌 Extending with Custom Sink
-
+## Extending with Custom Sink
+```
 from crimson_logger.src.crimson_sink import CrimsonSink
 
 class MyCustomSink(CrimsonSink):
     def configure(self, config):
+        # implement your configuration here
         ...
     
     def write(self, message: str):
+        # implement writing to sink
         ...
+```
 
 Then use:
 
+```
 builder = CrimsonLoggerBuilder().with_custom_sink(MyCustomSink())
+```
 
-📚 Project Structure
+## Project Structure
 
 crimson_logger/
 ├── src/
@@ -117,4 +124,4 @@ crimson_logger/
 ### Author
 
 Built by Pragya Sinha for educational and personal use.
-For questions or improvements, raise an issue or PR — but remember, this is not licensed for production use.
+For questions or improvements, raise an issue or PR but remember, this is not licensed for production use.

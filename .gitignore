@@ -1,0 +1,18 @@
+# Ignore temporary files and directories
+tmp/
+*.tmp
+
+# build directories
+build/
+dist/
+crimson_logger.egg-info/
+
+# test & cache directories
+__pycache__/
+*.pyc
+
+# Ignore IDE/editor files
+*.swp
+*.swo
+.vscode/
+.idea/

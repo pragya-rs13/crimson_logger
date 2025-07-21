@@ -3,7 +3,7 @@ from crimson_logger.src.crimson_log_config import CrimsonLogConfig
 
 
 def test_parser():
-    file_path = "crimson_logger/tests/file_config.txt"
+    file_path = "/Users/pragya/ws/interviews/phonepe_machine_round/crimson_logger/tests/file_config.txt"
     config = CrimsonConfigParser.parse(file_path)
     assert config == {
         "ts_format": "dd-mm-yyyy hh:MM:ss",
@@ -16,7 +16,7 @@ def test_parser():
 
 
 def test_config_obj():
-    file_path = "crimson_logger/tests/file_config.txt"
+    file_path = "/Users/pragya/ws/interviews/phonepe_machine_round/crimson_logger/tests/file_config.txt"
     config_dict = CrimsonConfigParser.parse(file_path)
     config_obj = CrimsonLogConfig.from_dict(config_dict)
 

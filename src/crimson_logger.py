@@ -285,16 +285,21 @@ class CrimsonLoggerBuilder:
 
         return self
 
-    def with_config(self, config_file: str):
+    def with_config(self, config_file: str, custom_config=None):
         """Set config
 
         Args:
-            sink (CrimsonWriter): Provide your own implementation of CrimsonWriter here
+            config_file (str): Provide your config file
+            custom_config (optional, CrimsonLogConfig): custom config obj here (Should inherit CrimsonLogConfig class)
 
         Raises:
             Exception: if config file does not exist
 
         """
+        if custom_config:
+            self._config = custom_config
+            return self
+        
         cfg = CrimsonConfigParser.parse(config_file=config_file)
         self._config = CrimsonLogConfig.from_dict(cfg)
 

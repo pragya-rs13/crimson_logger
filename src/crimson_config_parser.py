@@ -20,6 +20,7 @@ class CrimsonConfigParser:
             for line in file:
                 line = line.strip()
                 if line:
+                    print("****LINE: ",line)
                     if line.startswith("ts_format"):
                         key, val = line.split(":", 1)
                         config[key.strip()] = val.strip()

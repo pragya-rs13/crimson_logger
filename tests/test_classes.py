@@ -10,7 +10,7 @@ import datetime
 
 @pytest.fixture
 def config_dict():
-    file_path = "crimson_logger/tests/file_config.txt"
+    file_path = "/Users/pragya/ws/interviews/phonepe_machine_round/crimson_logger/tests/file_config.txt"
     return CrimsonConfigParser.parse(file_path)
 
 
@@ -75,7 +75,7 @@ def test_class_03_async_writer(async_writer, config_obj):
 def test_class_04_logger_building(config_obj, file_sink, sync_writer):
     logger = (
         CrimsonLoggerBuilder()
-        .with_config("crimson_logger/tests/file_config.txt")
+        .with_config("/Users/pragya/ws/interviews/phonepe_machine_round/crimson_logger/tests/file_config.txt")
         .with_custom_sink(file_sink)  # using this because I'm providing instance
         .with_custom_writer(sync_writer)
         .set_formatter()
@@ -93,7 +93,7 @@ def test_05_if_logger_works(config_obj):
 
     logger = (
         CrimsonLoggerBuilder()
-        .with_config("crimson_logger/tests/file_config.txt")
+        .with_config("/Users/pragya/ws/interviews/phonepe_machine_round/crimson_logger/tests/file_config.txt")
         .set_formatter()
         .set_sink()
         .set_writer()
